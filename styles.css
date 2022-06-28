@@ -1,0 +1,91 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: Gotham Rounded, sans-serif;
+  font-weight: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, #bfeaff, #f1abf2);
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(7, 100px);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.operation {
+  background-color: #e2f0f7 !important;
+}
+
+.operation:hover {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.calculator-grid > button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+#add-to-notes {
+  grid-column: 3 / -1;
+  font-size: 1rem;
+  background-color: #e2f0f7;
+  display: flex;
+  height: 5vh;
+  margin-top: 75px;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+#memory {
+  background-color: #e2f0f7;
+  grid-column: span 2;
+  display: flex;
+  height: 5vh;
+  margin-top: 75px;
+  /* align-items: flex-end; */
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 1px 6px;
+}
+.output {
+  grid-column: 1 /-1;
+  background-color: #e2f0f7;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous-operand {
+  color: rgba(66, 53, 53, 0.75);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: rgb(0, 0, 0);
+  font-size: 2.5rem;
+}
